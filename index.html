@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Saanvi ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #f3b5c8;
+    --deep-pink: #c65c80;
+    --dark: #593442;
+    --soft: #fff4f7;
+    --white: #fffafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 10%, #ffe3ed, transparent 35%),
+        radial-gradient(circle at 90% 90%, #f7d8e7, transparent 35%),
+        linear-gradient(135deg, #fff8fa, #ffedf3, #fff5f7);
+    color: var(--dark);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 0;
+    pointer-events: none;
+    color: #eaa0ba;
+    opacity: 0.65;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(500deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: min(760px, 92%);
+    margin: auto;
+    padding: 35px 0 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background: rgba(255, 250, 252, 0.88);
+    border: 1px solid rgba(224, 144, 174, 0.35);
+    border-radius: 28px;
+    padding: clamp(24px, 6vw, 45px);
+    box-shadow: 0 15px 45px rgba(153, 77, 108, 0.10);
+    backdrop-filter: blur(12px);
+    margin-bottom: 24px;
+}
+
+.cover {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    color: #b76a87;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--deep-pink);
+    font-size: clamp(43px, 10vw, 72px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(35px, 7vw, 48px);
+    color: var(--deep-pink);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #87465f;
+}
+
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.7;
+    margin: 20px 0 28px;
+    color: #815568;
+}
+
+.divider {
+    width: 85px;
+    height: 1px;
+    background: #dfa0b7;
+    margin: 25px auto;
+}
+
+p {
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+}
+
+.small {
+    font-size: 12px;
+    color: #a47587;
+    line-height: 1.9;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.primary-btn {
+    padding: 15px 27px;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(135deg, #d8799a, #bc587e);
+    box-shadow: 0 8px 20px rgba(190, 88, 126, 0.23);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.secondary-btn {
+    padding: 12px 22px;
+    border: 1px solid #e5afc2;
+    border-radius: 50px;
+    color: #a44e70;
+    background: #fff5f8;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.section {
+    display: none;
+    animation: appear 0.65s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-box {
+    background: linear-gradient(145deg, #fff0f5, #fff9fb);
+    border: 1px solid #f0c6d5;
+    border-radius: 22px;
+    padding: 25px;
+    margin: 24px 0;
+}
+
+.quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    line-height: 1.7;
+    font-style: italic;
+    color: #9c526f;
+    text-align: center;
+    margin: 22px 0;
+}
+
+.papa-box {
+    border-left: 3px solid #d783a2;
+    background: #fff1f6;
+    padding: 20px;
+    border-radius: 0 18px 18px 0;
+    margin: 24px 0;
+}
+
+.papa-box p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-style: italic;
+}
+
+.message {
+    font-size: 14px;
+    line-height: 2.1;
+    color: #694454;
+    white-space: normal;
+}
+
+.message p {
+    margin-bottom: 19px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    color: #c65c80;
+    margin-top: 25px;
+}
+
+.progress {
+    height: 3px;
+    width: 100%;
+    background: #f2dce5;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 20%;
+    background: #ce7695;
+    transition: width 0.4s ease;
+}
+
+.page-number {
+    text-align: center;
+    color: #b17b90;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.navigation button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #ad788d;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 94%;
+        padding-top: 18px;
+    }
+
+    .card {
+        border-radius: 22px;
+        padding: 23px 19px;
+    }
+
+    p, .message {
+        font-size: 13px;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- COVER -->
+    <section class="card cover section active" id="section-0">
+
+        <div class="eyebrow">A little something, made with love</div>
+
+        <h1>For My<br>Saanviii...</h1>
+
+        <div class="divider"></div>
+
+        <p class="subtitle">
+            Before tomorrow arrives,<br>
+            there's something I want you to know.
+        </p>
+
+        <p class="small">
+            No pressure. No expectations.<br>
+            Just a little reminder from someone who cares about you.
+        </p>
+
+        <br>
+
+        <button class="primary-btn" onclick="goTo(1)">
+            Open Your Little Surprise
+        </button>
+
+        <div class="page-number">01 · A LITTLE NOTE FOR YOU</div>
+    </section>
+
+
+    <!-- RESULT REASSURANCE -->
+    <section class="card section" id="section-1">
+
+        <div class="eyebrow">First things first</div>
+
+        <h2 class="center">About Tomorrow</h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Saanvi Sharma, I know tomorrow might feel a little scary.
+            Maybe you're excited, maybe you're nervous, or maybe you're
+            already thinking about all the things that could go wrong.
+        </p>
+
+        <p>
+            But please, meri baat sunna.
+        </p>
+
+        <div class="result-box">
+            <h3 class="center">Your Marks Are Not Your Worth</h3>
+
+            <p class="center">
+                Whatever your result says tomorrow, it cannot measure
+                your entire intelligence, your potential, your kindness,
+                or the person you are becoming.
+            </p>
+
+            <p class="center">
+                A good result will be something to celebrate.
+                A disappointing result will be something to learn from.
+                Neither one changes your worth.
+            </p>
+        </div>
+
+        <p>
+            I'm proud of you for trying, for studying, and for getting
+            through everything that made this exam difficult.
+            You don't have to score a particular percentage to make me
+            proud of you.
+        </p>
+
+        <p>
+            And if tomorrow doesn't go the way you hoped, please don't
+            start believing that you're not capable of doing better.
+            One result is one moment in your life, not the definition
+            of your future.
+        </p>
+
+        <div class="quote">
+            "You are allowed to be disappointed in a result
+            without being disappointed in yourself."
+        </div>
+
+        <p>
+            So please, whatever happens, breathe.
+            We'll take things one step at a time.
+            You don't have to pretend to be happy if you're sad,
+            and you don't have to hide your feelings from me.
+        </p>
+
+        <div class="navigation">
+            <button class="secondary-btn" onclick="goTo(0)">Previous</button>
+            <button class="primary-btn" onclick="goTo(2)">Continue →</button>
+        </div>
+
+        <div class="page-number">02 · YOU ARE MORE THAN A RESULT</div>
+    </section>
+
+
+    <!-- PAPA SECTION -->
+    <section class="card section" id="section-2">
+
+        <div class="eyebrow">One more thing, babie</div>
+
+        <h2 class="center">Please Don't Be Sad</h2>
+
+        <div class="divider"></div>
+
+        <p>
+            And Saanvi, if your result isn't what you expected,
+            and Papa gets upset or scolds you, please don't think
+            that everything is over.
+        </p>
+
+        <div class="papa-box">
+            <p>
+                Papa ka toh kaam hi hai daantna, please tum sad matt hona.
+            </p>
+        </div>
+
+        <p>
+            I know being scolded can hurt, especially when you've
+            already been worrying about your result yourself.
+            But a disappointing day doesn't mean that your efforts
+            were meaningless.
+        </p>
+
+        <p>
+            Give yourself some time. Let things settle down.
+            You don't need to solve every problem in one day.
+        </p>
+
+        <p>
+            And if you feel like crying, it's okay.
+            You don't have to act strong every single moment.
+            You can tell me how you feel, even if you don't know
+            what to say.
+        </p>
+
+        <div class="quote">
+            "Kal jo bhi ho, tumhe akele handle karne ki zaroorat nahi hai."
+        </div>
+
+        <div class="navigation">
+            <button class="secondary-btn" onclick="goTo(1)">Previous</button>
+            <button class="primary-btn" onclick="goTo(3)">One More Thing →</button>
+        </div>
+
+        <div class="page-number">03 · I'M HERE TO LISTEN</div>
+    </section>
+
+
+    <!-- USER'S ORIGINAL PARAGRAPH -->
+    <section class="card section" id="section-3">
+
+        <div class="eyebrow">Something from my heart</div>
+
+        <h2 class="center">I Need You To Understand</h2>
+
+        <div class="divider"></div>
+
+        <div class="message">
+
+            <p>Uh, Ig Sorry.<br>
+            Or Tbh Sorry bolne ka mann ni hai mera</p>
+
+            <p>
+            saanvi sharma, i was expecting you to be diffenrent.<br>
+            so different, You two are too same.<br>
+            yk she used to say <em>"What do i do that will make you love me?"</em>
+            </p>
+
+            <p>
+            But agar main khud batata ke <em>"do this to make me loved"</em><br>
+            Ye to fir aik sauda hota na?<br>
+            ye to simple si baat manna hua?<br>
+            Pyaar karna to nahin hua na?<br>
+            I understand har kisi ka different way hai pyaar karne ka,<br>
+            But you remember aik din i told you
+            </p>
+
+            <p>
+            <em>"Log jo dusro keliye karte hai, vo isliye karte hain
+            kyuke they expect others to do the same"</em>
+            </p>
+
+            <p>
+            And agar example se samjhayein to<br>
+            <em>I Crave for the love i give to you</em>
+            </p>
+
+            <p>
+            and i can also say<br>
+            you want to be feel loved the way you love me<br>
+            but for that, thats just bare minimum<br>
+            Mujhe to sab karna hai, everything possible that could make you happy
+            </p>
+
+            <p>
+            Can't you just try to do the same<br>
+            Just TRY : )
+            </p>
+
+            <p>
+            And abt the messi thing<br>
+            I dont hate messi,
+            </p>
+
+            <p>
+            Its just mujhe usse farak nai padta<br>
+            Padta to ronaldo se bhi nai hai lekin mera aik puraana rishta hai
+            </p>
+
+            <p>
+            And a like on messi post, rather than ronaldo's
+            </p>
+
+            <p>
+            That made me kinda jealous, or we can say<br>
+            Mera mann socha <em>"Why are we so different?<br>
+            Why can't we just be the same?"</em>
+            </p>
+
+            <p>
+            And About The Bye Thing
+            </p>
+
+            <p>
+            I just wanted reassurance and comfort<br>
+            But you chose to let me go.<br>
+            I actually just wanted you to stop me
+            </p>
+
+            <p>
+            I was expecting you to say<br>
+            <em>"ruko to sahi"</em>
+            </p>
+
+            <p>
+            But kya karein<br>
+            Tumne sayeeda wali harkat kardi
+            </p>
+
+            <p>
+            itna expect kiya tha<br>
+            Tum alag hogi.
+            </p>
+
+            <p>
+            you two and so alike.<br>
+            So alike.<br>
+            And i hate it, i absolutely hate it.
+            </p>
+
+            <p>
+            i hate sayeeda<br>
+            And can you just stop doing things that she did
+            </p>
+
+            <p>
+            Warna you'll eventually make me hate you<br>
+            And main ye nahin chahta, bilkul bhi.
+            </p>
+
+            <p>
+            And another thing<br>
+            i chose to talk kyuke my love is far greater than ego
+            </p>
+
+            <p>
+            Warna you say na <em>"Tum merese baat kiye bina reh nai sakte"</em><br>
+            I Can, I Can live.
+            </p>
+
+            <p>
+            Its just my love is greater than my ego so.<br>
+            I just can't<br>
+            To please meri najar me apni izzat mat girao
+            </p>
+
+            <p>
+            And bas itna hi<br>
+            And at the last
+            </p>
+
+            <p>
+            Sorry agar koi baat kadwi lagi ho<br>
+            but its the truth and it'll always be<br>
+            And you can't deny it.
+            </p>
+
+        </div>
+
+        <div class="navigation">
+            <button class="secondary-btn" onclick="goTo(2)">Previous</button>
+            <button class="primary-btn" onclick="goTo(4)">Read The Last Part →</button>
+        </div>
+
+        <div class="page-number">04 · MY WORDS, MY FEELINGS</div>
+    </section>
+
+
+    <!-- ASSISTANT'S PARAGRAPH -->
+    <section class="card section" id="section-4">
+
+        <div class="eyebrow">And one last thing</div>
+
+        <h2 class="center">Please Understand Me</h2>
+
+        <div class="divider"></div>
+
+        <div class="message">
+
+            <p>
+                And Saanvi, one last thing.
+            </p>
+
+            <p>
+                I'm not asking you to become someone else for me.
+                I'm not asking you to change your entire personality
+                or love me exactly the way I love you.
+            </p>
+
+            <p>
+                I just want you to understand me. To understand what
+                makes me happy, what hurts me, and what makes me feel loved.
+            </p>
+
+            <p>
+                Because I'm Abdurrehman. I'm the same person who tries
+                his best to make you happy, who wants to see you smile
+                even when he isn't feeling okay himself.
+                And sometimes, even I want to feel that someone cares
+                enough to notice when I'm not okay.
+            </p>
+
+            <p>
+                I don't want to teach you how to love me.
+                I just want you to know me well enough that, sometimes,
+                you understand without me having to explain everything.
+            </p>
+
+            <p>
+                Maybe that's too much to expect sometimes, maybe it isn't.
+                I don't know.
+            </p>
+
+            <p>
+                But I know that I don't want to lose you over something
+                we could've talked about. I don't want you to become
+                another person I have to learn to live without.
+            </p>
+
+            <p>
+                I want you here, Saanvi. Not because I can't live
+                without you, but because I genuinely want you in my life.
+            </p>
+
+            <p>
+                And I hope that, someday, you understand what I mean
+                when I say that I crave the love I give to you.
+            </p>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="center">
+            You don't have to have the perfect words.
+            You don't have to fix everything immediately.
+            I just hope we can understand each other better.
+        </p>
+
+        <div class="navigation">
+            <button class="secondary-btn" onclick="goTo(3)">Previous</button>
+            <button class="primary-btn" onclick="goTo(5)">One Last Surprise</button>
+        </div>
+
+        <div class="page-number">05 · FROM ABDURREHMAN</div>
+    </section>
+
+
+    <!-- FINAL PAGE -->
+    <section class="card section center" id="section-5">
+
+        <div class="eyebrow">Before you go</div>
+
+        <h1 style="font-size:clamp(42px, 9vw, 65px);">
+            My Saanvi
+        </h1>
+
+        <div class="divider"></div>
+
+        <p class="subtitle">
+            Tomorrow is just another day in your life.
+        </p>
+
+        <p>
+            Whether you come back smiling or feeling disappointed,
+            you are still the same Saanvi I've cared about all this time.
+        </p>
+
+        <p>
+            Your marks can change.
+            Your plans can change.
+            Some days can be better than others.
+        </p>
+
+        <p>
+            But please don't measure your worth by a number on a report card.
+            You have so much more ahead of you.
+        </p>
+
+        <div class="result-box">
+            <h3 class="center">One Day At A Time</h3>
+
+            <p class="center">
+                Do your best, take care of yourself,
+                and please don't be too hard on yourself.
+            </p>
+
+            <p class="center">
+                You deserve kindness on your difficult days, too.
+            </p>
+        </div>
+
+        <p class="subtitle">
+            Guud luck for tomorrow, Saanvi Sharma.
+        </p>
+
+        <p>
+            Whatever happens, I hope you give yourself the same
+            patience and kindness that you give to the people you love.
+        </p>
+
+        <div class="signature">
+            Yours, Abdurrehman
+        </div>
+
+        <div class="divider"></div>
+
+        <button class="secondary-btn" onclick="goTo(0)">
+            Read It Again
+        </button>
+
+        <div class="page-number">06 · END OF THIS LITTLE NOTE</div>
+    </section>
+
+    <footer>
+        Made with care, just for Saanvi.
+    </footer>
+
+</div>
+
+<script>
+const totalSections = 6;
+let currentSection = 0;
+
+function goTo(number) {
+    if (number < 0 || number >= totalSections) return;
+
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const nextSection = document.getElementById('section-' + number);
+
+    if (nextSection) {
+        nextSection.classList.add('active');
+        currentSection = number;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Gentle falling Sakura petals
+const petalSymbols = ['✿', '❀', '🌸', '♡'];
+
+function createPetal() {
+    const petal = document.createElement('div');
+
+    petal.className = 'petal';
+    petal.textContent =
+        petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.fontSize = (12 + Math.random() * 12) + 'px';
+    petal.style.animationDuration = (7 + Math.random() * 7) + 's';
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 15000);
+}
+
+setInterval(createPetal, 850);
+</script>
+
+</body>
+</html>
